@@ -1,0 +1,16 @@
+# Dependency directory
+node_modules
+
+# Debug log from npm
+npm-debug.log
+
+# Environment Variables should NEVER be published
+.env
+.idea
+.nyc_output
+.vscode
+
+test_api/response
+.env
+key
+test_api/DataTest.js

@@ -1,0 +1,47 @@
+{
+  "name": "back",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node  src/app.js",
+    "dev": "nodemon src/app.js",
+    "test_api": "mocha --timeout 20000 test/test_api/",
+    "test_api_root": "mocha --timeout 20000 test*test_api/test_root.js",
+    "test_unit": "mocha test/test_unit/",
+    "test_unit_basic": "mocha test/test_unit/basic_test.js",
+    "test_cov": "nyc mocha test/test_unit"
+  },
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "cors": "^2.8.5",
+    "dotenv": "^8.0.0",
+    "express": "^4.16.3",
+    "mongoose": "^5.2.10",
+    "morgan": "^1.9.0",
+    "uniqid": "^5.0.3"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "codecov": "^3.5.0",
+    "nodemon": "^1.19.1",
+    "nyc": "^14.1.1",
+    "puppeteer": "^1.18.1",
+    "supertest": "^4.0.2"
+  },
+  "nodemonConfig": {
+    "ignore": [
+      "test/*"
+    ],
+    "delay": "2500"
+  },
+
+  "nyc": {
+    "all": true,
+    "include": [
+      "src/**/*.js"
+    ],
+    "exclude": [
+      "**/*.spec.js"
+    ]
+  }
+}
