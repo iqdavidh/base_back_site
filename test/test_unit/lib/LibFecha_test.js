@@ -37,4 +37,18 @@ describe('LibFecha', function() {
 
 	});
 
+
+
+	describe('dateToYMD', function() {
+
+		it('fecha simple', function() {
+
+			const d=new Date(2000,0,30);
+			const fymd=LibFecha.dateToYMD(d);
+
+			assert(  '2000-01-30'===fymd,"No coincide");
+		});
+
+	});
+
 });
