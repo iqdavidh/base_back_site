@@ -15,7 +15,7 @@ const LibValidacion = {
     ;
 
     if(contadorCampos===0){
-      throw new Error("No se encontraron datos para actualizar");
+      throw new Error("No se encontraron datos requeridos");
     }
 
     return dataClean;
