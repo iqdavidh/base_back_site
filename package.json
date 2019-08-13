@@ -41,5 +41,8 @@
       "test/*"
     ],
     "delay": "2500"
+  },
+  "directories": {
+    "test": "test"
   }
 }
