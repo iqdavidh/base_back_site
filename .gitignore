@@ -14,3 +14,7 @@ test_api/response
 .env
 key
 test_api/DataTest.js
+
+.nyc_output
+coverage
+*.lcov

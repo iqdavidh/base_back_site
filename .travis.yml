@@ -3,4 +3,5 @@ language:
 node_js:
   - "stable"
 script:
-  - codecov
+  - npm run test
+  - npm run report-coverage
