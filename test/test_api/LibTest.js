@@ -10,7 +10,7 @@ module.exports = {
 
   saveResponse(texto, nombreArchivo) {
 
-    fs.writeFile("test_api/response/" + nombreArchivo, texto, function (err) {
+    fs.writeFile("test/test_api/response/" + nombreArchivo, texto, function (err) {
       if (err) {
         return console.log(err);
       }

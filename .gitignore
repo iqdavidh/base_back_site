@@ -10,7 +10,7 @@ npm-debug.log
 .nyc_output
 .vscode
 
-test_api/response
+test/test_api/response
 .env
 key
 test_api/DataTest.js
