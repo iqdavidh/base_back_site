@@ -3,32 +3,15 @@
 /**
  * Created by David on 18/07/2019.
  */
+const assert = require('assert');
 
-var assert = require('assert');
 const BuilderJsonResponse = require("../../../src/lib/BuilderJsonResponse");
+const LibUnitTest = require("../LibUnitTest");
 
-let res = {
-  statusValor: 0,
-  jsonValor: '',
-  status(v) {
-    this.statusValor = v;
-    return this;
-  },
-  json(v) {
-    this.jsonValor = v
-  },
-  getJson() {
-    return this.jsonValor;
-  },
-  getStatus() {
-    return this.statusValor;
-  },
-  reset() {
-    this.statusValor = null;
-    this.jsonValor = null;
-  }
 
-};
+
+const res=LibUnitTest.res;
+
 
 
 function assert_comparar(calculo, resultadoCorrecto) {
