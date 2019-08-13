@@ -4,7 +4,7 @@
  * Created by David on 18/07/2019.
  */
 
-var assert = require('assert');
+const assert = require('assert');
 
 describe('Demo', function() {
 
