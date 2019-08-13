@@ -1,7 +1,7 @@
 'use strict';
-const dotenv = require('dotenv');
+require('dotenv').config();
 
-dotenv.config();
+
 
 /**
  * Created by David on 18/07/2019.
@@ -22,7 +22,8 @@ const ServerConfig = {
   back: {
     port: process.env.BACK_PORT,
     url: process.env.URL_BACK
-  }
+  },
+  jwtSecret:process.env.JWT_SECRET
 };
 
 

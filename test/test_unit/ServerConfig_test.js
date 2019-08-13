@@ -17,6 +17,7 @@ describe('ServerConfig', function() {
 		assert(ServerConfig.mongo.pass !== undefined, "No esta moongo.pass");
 		assert(ServerConfig.back.port !== undefined, "No esta back.port");
 		assert(ServerConfig.back.url !== undefined, "No esta back.url");
+		assert(ServerConfig.jwtSecret !== undefined, "No esta jwtSecret");
 
 	});
 

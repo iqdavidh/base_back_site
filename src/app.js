@@ -3,6 +3,8 @@ const bodyParser = require('body-parser');
 
 const UrlApiConfig = require("./UrlApiConfig");
 const BuilderJsonResponse = require("./lib/BuilderJsonResponse");
+
+
 //const DBMongo = require("./model/DbMongo"); /*<-- solo hace conexion con la base de datos */
 
 
@@ -23,9 +25,7 @@ app.get("/", function (req, res) {
 });
 
 
-
-const http = require('http');
-const ServerConfig = require("./ServerConfig");
+/* Not found && error --------------------------------------------------------- */
 
 
 app.use((req, res, next) => {
@@ -43,6 +43,9 @@ app.use((err, req, res, next) => {
 
 
 /* servidor ------------------------------------------------------------------ */
+const http = require('http');
+const ServerConfig = require("./ServerConfig");
+
 let server = http.createServer(app);
 
 server.on('error', error => {
