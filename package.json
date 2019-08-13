@@ -5,7 +5,7 @@
   "scripts": {
     "start": "node  src/app.js",
     "dev": "nodemon src/app.js",
-    "test": "mocha test/test_unit/**/*.js",
+    "test": "nyc mocha test/test_unit/**/*.js",
     "cov": "nyc mocha test/test_unit/**/*.js",
     "test_api": "mocha --timeout 20000 test/test_api/**/*.js",
     "test_api_root": "mocha --timeout 20000 test/test_api/test_root.js",
