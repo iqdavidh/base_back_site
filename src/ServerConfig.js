@@ -19,10 +19,6 @@ const ServerConfig = {
     user: process.env.MONGO_USER,
     pass: process.env.MONGO_PASS,
   },
-  front: {
-    port: process.env.FRONT_PORT,
-    url: process.env.URL_FRONT
-  },
   back: {
     port: process.env.BACK_PORT,
     url: process.env.URL_BACK
