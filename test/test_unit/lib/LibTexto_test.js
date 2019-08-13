@@ -7,9 +7,9 @@
 var assert = require('assert');
 const LibTexto = require("../../../src/lib/LibTexto");
 
-describe('UcFirst', function() {
+describe('LibTexto', function() {
 
-	describe('prueba formas de texto, upper, mixto lower ', function() {
+	describe('UcFirst ', function() {
 
 		it('Upper', function() {
 			let r=LibTexto.Ucfirst("CASA");

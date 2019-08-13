@@ -42,18 +42,6 @@ describe('getDataClean', function () {
 
   });
 
-  it('estan todos los requridos, sobran campos en raw', function () {
-
-    let listaCamposAllow = ['c1', 'c2', 'c3'];
-    let dataRaw = {c1: 1, c2: "2", c3: 0, k: 3434, otroCampo: null};
-
-    let dataClean = LibValidacion.getDataClean(dataRaw, listaCamposAllow);
-    let respuestaEsperada = {c1: 1, c2: "2", c3: 0};
-
-
-    assert_comparar(dataClean, respuestaEsperada);
-
-  });
 
 
   it('faltan  requridos - hay exception, no hay campos requeridos', function () {
