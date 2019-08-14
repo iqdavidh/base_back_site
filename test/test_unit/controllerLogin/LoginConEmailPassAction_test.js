@@ -39,4 +39,61 @@ describe('LoginConEmailPassAction', function () {
 
   });
 
+  it('POST - Error Pass incorrecto', async function () {
+
+    const request = httpMocks.createRequest({
+      method: 'POST',
+      url: '/no importa',
+      body: {
+        user: "no existe el usuario perop el pass es correcto",
+        password: "pass"
+      }
+    });
+
+    const response = httpMocks.createResponse();
+
+    await LoginConEmailPassAction(request, response);
+
+    assert(response._isJSON() === true, "No es json");
+
+    const data = response._getJSONData();
+
+    assert(data.success === false, "Se esperaba respuesta false");
+
+    assert(data.data === undefined , "El token no deberia esta");
+
+    assert(403 === response.statusCode, "El estatus no es 200");
+
+
+  });
+
+
+  it('POST - Error User incorrecto', async function () {
+
+    const request = httpMocks.createRequest({
+      method: 'POST',
+      url: '/no importa',
+      body: {
+        user: "admin",
+        password: "pass incorrecto pero user correcto"
+      }
+    });
+
+    const response = httpMocks.createResponse();
+
+    await LoginConEmailPassAction(request, response);
+
+    assert(response._isJSON() === true, "No es json");
+
+    const data = response._getJSONData();
+
+    assert(data.success === false, "Se esperaba respuesta false");
+
+    assert(data.data === undefined , "El token no deberia esta");
+
+    assert(403 === response.statusCode, "El estatus no es 200");
+
+
+  });
+
 });

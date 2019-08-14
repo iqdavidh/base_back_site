@@ -10,6 +10,7 @@ const LoginConEmailPassAction = async (req, res, next) => {
 
   let resultadoAutenticacion = await AutService.getDataFromUserPass(dataRaw.user, dataRaw.password);
 
+
   if (resultadoAutenticacion.success === false) {
     return BuilderJsonResponse.Error(res, resultadoAutenticacion.msg, 403);
   }
@@ -45,14 +46,21 @@ const LoginConEmailPassAction = async (req, res, next) => {
   };
 
 
-  const token = await fnGetToken();
 
-  const dataRespuesta = {
-    data: dataAutenticacion.public,
-    token: token
-  };
+  try {
+    const token = await fnGetToken();
 
-  BuilderJsonResponse.Success(res, dataRespuesta);
+    const dataRespuesta = {
+      data: dataAutenticacion.public,
+      token: token
+    };
+
+    BuilderJsonResponse.Success(res, dataRespuesta);
+  }catch (e) {
+
+    BuilderJsonResponse.Success(res, dataRespuesta);
+  }
+
 
 };
 
