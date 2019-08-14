@@ -2,18 +2,8 @@
 require('dotenv').config();
 
 
-
-/**
- * Created by David on 18/07/2019.
- */
-
-
-
-const isServerDev = process.env.NODE_ENV === "development";
-
-
 const ServerConfig = {
-  isServerDev: isServerDev,
+  tipoServer: process.env.NODE_ENV ,
   mongo: {
     urlServer: process.env.MONGO_URL_ROOT_CX,
     user: process.env.MONGO_USER,
