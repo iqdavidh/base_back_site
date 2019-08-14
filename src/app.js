@@ -2,7 +2,11 @@ const express = require('express');
 const bodyParser = require('body-parser');
 
 const UrlApiConfig = require("./UrlApiConfig");
+
 const RootAction = require("./controller/RootAction");
+const NotFoundAction = require("./controller/NotFoundAction");
+const ErrorAction = require("./controller/ErrorAction");
+
 const BuilderJsonResponse = require("./lib/BuilderJsonResponse");
 
 
@@ -24,21 +28,8 @@ app.use(bodyParser.urlencoded({extended: false}));
 app.get("/", RootAction);
 
 
-/* Not found && error --------------------------------------------------------- */
-
-
-app.use((req, res, next) => {
-	BuilderJsonResponse.Error(res, 'not found', 404)
-});
-
-app.use((err, req, res, next) => {
-	// always log the error
-	console.error('ERROR', req.method, req.path, err);
-
-	if (!res.headersSent) {
-		BuilderJsonResponse.Error(res,err);
-	}
-});
+app.use(NotFoundAction);
+app.use(ErrorAction);
 
 
 /* servidor ------------------------------------------------------------------ */
