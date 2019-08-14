@@ -2,6 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 
 const UrlApiConfig = require("./UrlApiConfig");
+const RootAction = require("./controller/RootAction");
 const BuilderJsonResponse = require("./lib/BuilderJsonResponse");
 
 
@@ -20,9 +21,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
 
 
-app.get("/", function (req, res) {
-	BuilderJsonResponse.Success(res,{}, "I'm backend");
-});
+app.get("/", RootAction);
 
 
 /* Not found && error --------------------------------------------------------- */

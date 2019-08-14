@@ -1,8 +1,7 @@
 const jsonwebtoken = require('jsonwebtoken');
 const BuilderJsonResponse = require("../lib/BuilderJsonResponse");
-
-
-
+const ServerConfig = require("../ServerConfig");
+const AutService = require("../service/aut/AutService");
 
 
 const LoginConEmailPassAction = async (req, res, next) => {
@@ -14,6 +13,8 @@ const LoginConEmailPassAction = async (req, res, next) => {
   if (resultadoAutenticacion.success === false) {
     return BuilderJsonResponse.Error(res, resultadoAutenticacion.msg, 403);
   }
+
+  const dataAutenticacion = resultadoAutenticacion.data;
 
 
   jsonwebtoken.sign({data: dataAutenticacion.internal}, ServerConfig.jwtSecret, {expiresIn: '8h'}, (err, token) => {
